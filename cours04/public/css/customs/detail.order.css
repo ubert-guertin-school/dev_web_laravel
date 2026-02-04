@@ -1,0 +1,59 @@
+.account-title h4 {
+    justify-content: space-between;
+}
+
+.orderlist {
+    padding: 0px 30px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    transition: all linear .3s;
+    -webkit-transition: all linear .3s;
+    -moz-transition: all linear .3s;
+    -ms-transition: all linear .3s;
+    -o-transition: all linear .3s;
+}
+
+.orderlist-details {
+    padding: 25px;
+    border-radius: 8px;
+    background: var(--chalk);
+    margin-bottom: 25px;
+}
+
+.orderlist-deliver {
+    height: 215px;
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    background: var(--chalk);
+}
+
+.orderlist-details li {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.orderlist-details li h6 {
+    line-height: 26px;
+    white-space: nowrap;
+    text-transform: capitalize;
+}
+
+.orderlist-details li:last-child {
+    margin-bottom: 0px;
+}
+
+.orderlist-deliver h6 {
+    padding-bottom: 15px;
+}

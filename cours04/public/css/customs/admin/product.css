@@ -1,0 +1,15 @@
+.btnSave {
+    padding-top: 0;
+    border-radius: 8px;
+    letter-spacing: 0.3px;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--white);
+    background: var(--primary);
+}
+
+.txtDescription {
+    height: 115px;
+    padding-top:5px;
+    padding-bottom:5px;
+}

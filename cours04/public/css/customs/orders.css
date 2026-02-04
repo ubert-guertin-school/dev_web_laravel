@@ -1,0 +1,30 @@
+.table > :not(:last-child) > :last-child > * {
+    border-bottom-color: var(--border);
+  }
+  
+  .table thead tr {
+    background: var(--chalk);
+  }
+  
+  .table thead th {
+    font-size: 15px;
+    line-height: 32px;
+    color: var(--heading);
+  }
+  
+  .table tbody tr th,
+  .table tbody tr td {
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--text);
+    text-align: center;
+    text-transform: capitalize;
+  }
+  
+  .table tbody tr th {
+    border-right: 1px solid var(--border);
+  }
+  
+  .table .fw-bold {
+    font-weight: 500 !important;
+  }

@@ -1,0 +1,15 @@
+.login-view {
+    width: 500px;
+    border-radius: 8px;
+    background: var(--white);
+}
+
+.login-logo {
+    width: 250px;
+    height: auto;
+}
+
+.user-form-divider {
+    margin-left: 25px;
+    margin-right: 25px;
+}

@@ -1,0 +1,10 @@
+/* .header-form {
+    margin-left: 25px;
+    margin-right: 25px;
+} */
+
+.logout-text {
+    font-size: 10pt;
+    font-weight: 500;
+    color: var(--primary);
+}

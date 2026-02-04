@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Sniglet&display=swap');
+
+.navbar-part {
+    margin-bottom: 15px;
+}
+
+.header-logo {
+    margin-right: 10px;
+}
+
+.header-account {
+    margin-left: 25px;
+}
+
+.header-name {
+    font-family: 'Sniglet', cursive;
+    font-size: 1.5em;
+}
+
+.header-search {
+    margin: 0px 25px;
+}
+
+.footer-name{
+    font-family: 'Sniglet', cursive;
+    font-size: 2.5em;
+    vertical-align: middle;
+}
+
+.sniglet {
+    font-family: 'Sniglet', cursive;
+}
+
+.intro-part {
+    padding: 45px 0px;
+    background: var(--intro-bg);
+}
