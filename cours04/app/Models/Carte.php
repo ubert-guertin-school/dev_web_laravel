@@ -6,7 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Carte extends Model
 {
-    //protected $table = "cartes";
-    //protected $primaryKey = "carteId";
+    private $primarykey = 'carte_id';
 
+    public function categorie() {
+        return $this->belongsTo(Categorie::class);
+    }
 }

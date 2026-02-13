@@ -1,7 +1,4 @@
-@props([
-    "titre" => "Titre par defaut",
-    "css"
-]);
+@props(["titre" => "Mon projet", "css"])
 
 <!DOCTYPE html>
 <html lang="en">
@@ -22,7 +19,7 @@
         <title>{{ $titre }}</title>
 
         <!-- FAVICON -->
-        <link rel="icon" href="assets/images/favicon.png" />
+        <link rel="icon" href="{{ asset('images/favicon.png') }}" />
 
         <!-- FONTS -->
         <link rel="stylesheet" href="{{ asset('fonts/flaticon/flaticon.css') }}" />
@@ -92,7 +89,7 @@
     </head>
     <body>
 
-        {{ $slot }}
+        {{$slot}}
 
     </body>
 </html>

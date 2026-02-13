@@ -1,9 +1,9 @@
-<x-achat-layout>
+<x-layout titre="achat" css="'assets/css/customs/cart.css'">
         <a class="backtop fas fa-arrow-up" href="#"></a>
 
-        <x-achat-header />
+        <x-header/>
 
-        <x-achat-navbar />
+        <x-navbar/>
 
         <section class="inner-section checkout-part">
             <div class="container">
@@ -31,7 +31,7 @@
                                                         <tr>
                                                             <td class="table-image">
                                                                 <img class="cart-product-image"
-                                                                    src="assets/images/produits/image-non-disponible.jpg"
+                                                                    src="{{ asset('/images/produits/image-non-disponible.jpg') }}"
                                                                     alt="product">
                                                             </td>
                                                             <td class="table-name">
@@ -65,7 +65,7 @@
                                                         <tr>
                                                             <td class="table-image">
                                                                 <img class="cart-product-image"
-                                                                    src="assets/images/produits/image-non-disponible.jpg"
+                                                                    src="{{ asset('/images/produits/image-non-disponible.jpg') }}"
                                                                     alt="product">
                                                             </td>
                                                             <td class="table-name">
@@ -163,10 +163,7 @@
 
 
 
-        <x-achat-footer />
+        <x-footer/>
 
-        <script defer src="{{ asset('js/customs/cart.js') }}"></script>
-
-    </body>
-</html>
-</x-achat-layout>
+        <script defer src="{{ asset('/js/customs/cart.js') }}"></script>
+</x-layout>
