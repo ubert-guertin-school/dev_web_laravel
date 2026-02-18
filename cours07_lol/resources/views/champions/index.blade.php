@@ -15,7 +15,7 @@
                                 <h5 class='card-title text-center'>{{ $champion->nom }}</h5>
                             </a>
 
-                            <img class='mx-auto d-block' src='http://ddragon.leagueoflegends.com/cdn/13.1.1/img/champion/{{ $champion->nom }}.png' />
+                            <img class='mx-auto d-block' src='http://ddragon.leagueoflegends.com/cdn/13.1.1/img/champion/{{ $champion->image }}.png' />
                         </div>
                     </div>
 
