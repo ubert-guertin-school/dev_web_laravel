@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('categorie_champion', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('categorie_id');
-            $table->foreignId('champion_id');
+            $table->foreignId('categorie_id')->constrained(); // C'est quoi une contrainte ? => 
+            $table->foreignId('champion_id')->constrained();
             $table->timestamps();
         });
     }
