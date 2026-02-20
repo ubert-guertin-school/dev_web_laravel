@@ -13,12 +13,14 @@
                 <span>S'inscrire</span>
             </a>
 
-            <form class="header-form" method="GET" action="/">
+            <form class="header-form" method="GET" action="{{ route('produits.index') }}">
                 <input
                     type="text"
                     placeholder="Rechercher ..."
                     name="recherche"
+                    value="{{ request()->recherche }}"
                 />
+
                 <button type="submit">
                     <i class="fas fa-search"></i>
                 </button>

@@ -9,12 +9,27 @@ use Illuminate\Http\Request;
 class CarteController extends Controller
 {
     public function index(Request $request) {
-        $recherche = $request->recherche;
-        dd($recherche);
+        $filtres = collect();
+
+        if ($request->has('recherche')) {
+            $recherche = $request->recherche;
+            $cartes = Carte::whereLike('nom', "%$recherche%")->orWhereLike('description', "%$recherche%")->get();
+
+        } else if ($request->has("categories")) {
+            $categories = $request->categories;
+            $cartes = Carte::whereIn('categorie_id', $categories)->get();
+            $filtres = collect($request->categories);
+
+        } else {
+            $cartes = Carte::all();
+        }
+
+        $categories = Categorie::all();
 
         return view('produits.index', [
-            "cartes" => Carte::all(),
-            "categories" => Categorie::all()
+            "cartes" => $cartes,
+            "categories" => $categories,
+            "filtres" => $filtres
         ]);
     }
 
@@ -22,18 +37,17 @@ class CarteController extends Controller
     public function show(int $id) {
         return view('produits.show', [
             "carte" => Carte::findOrFail($id),
-            "categories" => Categorie::all()
+            "categories" => Categorie::all(),
         ]);
     }
+
+    public function showAjax(int $id) {
+        $carte = Carte::findOrFail($id);
+        return view("produits._show",
+        ["carte" => $carte]);
+    }
 }
-
-
-
-
-
-
-
-      // // Récupérer une carte spécifique selon l'id
+// // Récupérer une carte spécifique selon l'id
         // $carte = Carte::findOrFail(1);
 
         // // Récupérer les cartes qui valent 200$ et plus

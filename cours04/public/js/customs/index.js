@@ -1,28 +1,30 @@
-const Scrollbar = window.Scrollbar;
-$(document).ready(() => {
-    Scrollbar.init(document.querySelector('#category-filters'), { alwaysShowTracks:true});
+let cartes = document.querySelectorAll(".product-view");
+cartes.forEach(carte => {
+    carte.addEventListener("click", e => {
+        e.preventDefault();
 
-    $(".product-view").click(async (event) => {
-        event.preventDefault();
+        const href = e.target.href;
 
-        const href = event.target.href;
-        const response = await axios.get(href);
+        console.log(href);
 
-        if(response.status === 200) {
-            $("#product-modal-content").html(response.data);
-            const productViewModal = new bootstrap.Modal(document.getElementById('product-view'), {});
-        }
+        let modale = document.querySelector("#product-modal-content");
+
+        axios.get(href)
+            .then(reponse => {
+                console.log(reponse);
+                modale.innerHTML = reponse.data;
+            })
+
+            .catch(erreur => {
+                console.log(erreur);
+            });
     });
-
-})
-
+});
 
 function handleCategoryClick(checkbox) {
-
     if(checkbox.id !== "") {
         window.location.href = `/?categories=${checkbox.id}`;
     } else {
         window.location.href = "/";
     }
-
 }

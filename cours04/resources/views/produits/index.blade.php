@@ -11,13 +11,19 @@
                 <div class="col-lg-3">
                     <div class="shop-widget">
                         <h6 class="shop-widget-title">Filtrer par catégorie</h6>
-                        <form method="GET">
+                        <form method="GET" action="{{ route('produits.index') }}">
                             <ul id="category-filters" class="shop-widget-list shop-widget-scroll">
 
                                 @forelse ($categories as $categorie)
                                     <li>
                                         <div class="shop-widget-content">
-                                            <input type="checkbox" name="categories[]" value="{{ $categorie->id }}">
+                                            <input
+                                                type="checkbox"
+                                                name="categories[]"
+                                                value="{{ $categorie->id }}"
+                                                @checked($filtres->contains($categorie->id))
+                                            >
+
                                             <label>{{ $categorie->nom }}</label>
                                         </div>
                                         <span class="shop-widget-number">({{ $categorie->cartes->count() }})</span>
@@ -82,7 +88,7 @@
                                         </a>
 
                                         <div class="product-widget">
-                                            <a title="Voir détail" href="#" class="fas fa-eye product-view"
+                                            <a title="Voir détail" href="{{ route('showAjax', ["id" => $carte->id] ) }}" class="fas fa-eye product-view"
                                                 data-bs-toggle="modal" data-bs-target="#product-view"></a>
                                         </div>
                                     </div>
@@ -114,6 +120,7 @@
         </div>
     </section>
 
+    {{-- Modale --}}
     <div class="modal fade" id="product-view">
         <div class="modal-dialog">
             <div id="product-modal-content" class="modal-content">
