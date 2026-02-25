@@ -1,0 +1,142 @@
+:root {
+    --bg: #0b1220;
+    --panel: rgba(255, 255, 255, 0.06);
+    --panel-2: rgba(255, 255, 255, 0.1);
+    --stroke: rgba(255, 255, 255, 0.12);
+    --text: rgba(255, 255, 255, 0.92);
+    --muted: rgba(255, 255, 255, 0.68);
+    --accent: #62f3ff;
+    --accent2: #a78bfa;
+}
+body {
+    background: radial-gradient(
+            1200px 600px at 10% 0%,
+            rgba(98, 243, 255, 0.14),
+            transparent 50%
+        ),
+        radial-gradient(
+            900px 500px at 100% 10%,
+            rgba(167, 139, 250, 0.14),
+            transparent 55%
+        ),
+        var(--bg);
+    color: var(--text);
+}
+.glass {
+    background: linear-gradient(
+        180deg,
+        var(--panel),
+        rgba(255, 255, 255, 0.03)
+    );
+    border: 1px solid var(--stroke);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(10px);
+}
+.brand-dot {
+    display: inline-block;
+    width: 0.6rem;
+    height: 0.6rem;
+    border-radius: 999px;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    margin-right: 0.5rem;
+    box-shadow: 0 0 18px rgba(98, 243, 255, 0.35);
+}
+.hero-badge {
+    border: 1px solid var(--stroke);
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--muted);
+}
+.product-card {
+    transition: transform 0.15s ease, border-color 0.15s ease;
+    border-color: var(--stroke);
+    --bs-card-title-color: var(--text);
+    --bs-card-color:var(--accent);
+}
+.product-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(98, 243, 255, 0.35);
+}
+
+.thumb {
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    background: #fff;
+    border-radius: 0.75rem;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+.price {
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.2px;
+}
+.btn-accent {
+    --bs-btn-color: #071019;
+    --bs-btn-bg: var(--accent);
+    --bs-btn-border-color: transparent;
+    --bs-btn-hover-bg: #7ff7ff;
+    --bs-btn-hover-border-color: transparent;
+    --bs-btn-focus-shadow-rgb: 98, 243, 255;
+}
+.btn-outline-accent {
+    --bs-btn-color: var(--accent);
+    --bs-btn-border-color: rgba(98, 243, 255, 0.35);
+    --bs-btn-hover-bg: rgba(98, 243, 255, 0.1);
+    --bs-btn-hover-border-color: rgba(98, 243, 255, 0.55);
+    --bs-btn-focus-shadow-rgb: 98, 243, 255;
+}
+.form-control,
+.form-select {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: var(--stroke);
+    color: var(--text);
+}
+
+.form-select option {
+    color: var(--bg);
+}
+
+
+.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.45);
+}
+.form-control:focus,
+.form-select:focus {
+    border-color: rgba(98, 243, 255, 0.55);
+    box-shadow: 0 0 0 0.2rem rgba(98, 243, 255, 0.12);
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--text);
+}
+.nav-link,
+.navbar-brand {
+    color: var(--text) !important;
+}
+.nav-link.text-muted {
+    color: var(--muted) !important;
+}
+.pill {
+    border: 1px solid var(--stroke);
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--muted);
+}
+
+#mainNavbar {
+    transition: background-color 0.25s ease, box-shadow 0.25s ease,
+        backdrop-filter 0.25s ease;
+    background-color: transparent;
+}
+
+#mainNavbar.navbar-scrolled {
+    background-color: rgba(11, 18, 32, 0.85);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+.muted {
+    color: var(--muted);
+}
+footer a {
+    color: rgba(98, 243, 255, 0.85);
+    text-decoration: none;
+}
+footer a:hover {
+    text-decoration: underline;
+}

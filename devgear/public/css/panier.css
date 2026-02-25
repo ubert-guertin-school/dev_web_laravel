@@ -1,0 +1,70 @@
+:root{
+    --bg: #0b1220;
+    --panel: rgba(255,255,255,.06);
+    --stroke: rgba(255,255,255,.12);
+    --text: rgba(255,255,255,.92);
+    --muted: rgba(255,255,255,.68);
+    --accent: #62f3ff;
+    --accent2: #a78bfa;
+  }
+
+  html,
+  body {
+    height: 100%;
+  }
+
+  body{
+    background: radial-gradient(1200px 600px at 10% 0%, rgba(98,243,255,.14), transparent 50%),
+                radial-gradient(900px 500px at 100% 10%, rgba(167,139,250,.14), transparent 55%),
+                var(--bg);
+    color: var(--text);
+  }
+  .glass{
+    background: linear-gradient(180deg, var(--panel), rgba(255,255,255,.03));
+    border: 1px solid var(--stroke);
+    box-shadow: 0 10px 40px rgba(0,0,0,.35);
+    backdrop-filter: blur(10px);
+  }
+  .brand-dot{
+    display:inline-block; width:.6rem; height:.6rem; border-radius:999px;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    margin-right:.5rem;
+    box-shadow: 0 0 18px rgba(98,243,255,.35);
+  }
+  .btn-accent{
+    --bs-btn-color: #071019;
+    --bs-btn-bg: var(--accent);
+    --bs-btn-border-color: transparent;
+    --bs-btn-hover-bg: #7ff7ff;
+    --bs-btn-focus-shadow-rgb: 98,243,255;
+  }
+  .btn-outline-accent{
+    --bs-btn-color: var(--accent);
+    --bs-btn-border-color: rgba(98,243,255,.35);
+    --bs-btn-hover-bg: rgba(98,243,255,.10);
+    --bs-btn-hover-border-color: rgba(98,243,255,.55);
+    --bs-btn-focus-shadow-rgb: 98,243,255;
+  }
+  .thumb{
+    width: 88px;
+    height: 66px;
+    object-fit: contain;
+    background: #fff;
+    border-radius: .75rem;
+    border: 1px solid rgba(0,0,0,.08);
+  }
+  .form-control, .form-select{
+    background: rgba(255,255,255,.04);
+    border-color: var(--stroke);
+    color: var(--text);
+  }
+  .form-control::placeholder{ color: rgba(255,255,255,.45); }
+  .form-control:focus{
+    border-color: rgba(98,243,255,.55);
+    box-shadow: 0 0 0 .2rem rgba(98,243,255,.12);
+    background: rgba(255,255,255,.06);
+    color: var(--text);
+  }
+  .muted{ color: var(--muted); }
+  .price{ font-variant-numeric: tabular-nums; }
+  .table>:not(caption)>*>*{ background: transparent; color: var(--text); border-color: rgba(255,255,255,.10); }

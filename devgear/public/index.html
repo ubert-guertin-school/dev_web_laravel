@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DevGear — Gadgets de développeurs</title>
+
+  <!-- Bootstrap 5.3 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg sticky-top" id="mainNavbar">
+    <div class="container py-2">
+        <a class="navbar-brand fw-semibold" href="#">
+            <span class="brand-dot"></span>DevGear
+        </a>
+
+        <button class="navbar-toggler btn btn-outline-light" type="button" data-bs-toggle="collapse"
+            data-bs-target="#nav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="navbar-collapse collapse" id="nav">
+            <ul class="navbar-nav gap-lg-2 align-items-lg-center ms-auto">
+                <li class="nav-item"><a class="nav-link text-muted" href="#catalogue">Catalogue</a></li>
+                <li class="nav-item"><a class="nav-link text-muted" href="#categories">Catégories</a></li>
+                <li class="nav-item"><a class="nav-link text-muted" href="#promo">Promotions</a></li>
+                <li class="nav-item ms-lg-2">
+                    <a class="btn btn-outline-accent position-relative" href="#">
+                        Panier
+                        <span
+                            class="position-absolute start-100 translate-middle badge rounded-pill text-bg-light top-0">
+                            2
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<header class="container py-4 py-lg-5">
+    <div class="glass rounded-4 p-4 p-lg-5">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-7">
+          <div class="d-inline-flex align-items-center gap-2 px-3 py-2 rounded-pill hero-badge mb-3">
+            <span class="small">Bébelles utiles pour coder (et survivre).</span>
+          </div>
+
+          <h1 class="display-5 fw-bold mb-3">
+            Un setup pour des devs, <span style="color: var(--accent);">par des devs</span>.
+          </h1>
+          <p class="lead muted mb-4">
+            Claviers, ergonomie, hubs, câbles et petits trucs qui rendent le quotidien plus tolérables.
+            Tout ce qu'il te faut pour mettre en pratique tes compétences.
+          </p>
+
+          <div class="d-flex flex-wrap gap-2">
+            <a class="btn btn-accent btn-lg" href="#catalogue">Voir le catalogue</a>
+            <a class="btn btn-outline-accent btn-lg" href="#promo">Offres du moment</a>
+          </div>
+
+          <div class="d-flex gap-2 mt-4 flex-wrap">
+            <span class="pill small px-3 py-2 rounded-pill">✅ Retours simples</span>
+            <span class="pill small px-3 py-2 rounded-pill">⚡ Employés connaissants</span>
+            <span class="pill small px-3 py-2 rounded-pill">🔍 Recherche efficace</span>
+          </div>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="glass rounded-4 p-3">
+            <div class="row g-3">
+              <div class="col-6">
+                <img class="thumb w-100" src="images/clavier-mecanique-60-pour-dev.jpg" alt="Clavier mécanique 60">
+              </div>
+              <div class="col-6">
+                <img class="thumb w-100" src="images/souris-ergonomique-verticale.jpg" alt="Souris verticale">
+              </div>
+              <div class="col-12">
+                <img class="thumb w-100" src="images/hub-usb-c-6-en-1.jpg" alt="Hub USB-C" style="aspect-ratio: 16/9;">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- Filtres et recherche -->
+  <section id="catalogue" class="container pb-4 pb-lg-5">
+    <div class="glass rounded-4 p-3 p-lg-4 mb-4">
+      <div class="row g-3 align-items-end">
+        <div class="col-lg-7">
+          <label class="form-label small muted">Rechercher</label>
+          <input class="form-control form-control-lg" type="search" placeholder="Clavier, hub, ergonomie…">
+        </div>
+        <div class="col-lg-3">
+          <label class="form-label small muted">Catégorie</label>
+          <select class="form-select form-select-lg">
+            <option value="" selected>Toutes</option>
+            <option>Claviers & touches</option>
+            <option>Souris & pointeurs</option>
+            <option>Ergonomie</option>
+            <option>Organisation & bureau</option>
+            <option>Audio & visioconférence</option>
+            <option>Câbles & adaptateurs</option>
+            <option>Stockage & hubs</option>
+            <option>Éclairage & ambiance</option>
+          </select>
+        </div>
+        <div class="col-lg-2 d-grid">
+          <button class="btn btn-accent btn-lg">Appliquer</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Grille de produits -->
+    <div class="row g-3 g-lg-4">
+        <!-- Produit 1 -->
+      <div class="col-12 col-sm-6 col-lg-4">
+        <div class="card glass product-card rounded-4 h-100">
+          <div class="card-body">
+            <img class="thumb w-100 mb-3" src="images/clavier-mecanique-60-pour-dev.jpg" alt="Clavier mecanique 60 pour dev">
+            <div class="d-flex justify-content-between align-items-start gap-2">
+              <div>
+                <h5 class="card-title mb-1">Clavier mécanique 60 pour dev</h5>
+                <p class="small muted mb-2">Claviers & touches</p>
+              </div>
+              <span class="badge text-bg-dark border" style="border-color: rgba(255,255,255,.12)!important;">En stock</span>
+            </div>
+            <p class="card-text small muted">
+              Compact, rapide, parfait pour coder sans envahir le bureau.
+            </p>
+
+            <div class="d-flex justify-content-between align-items-center mt-3">
+              <div class="price fw-semibold fs-5">89,99 $</div>
+              <div class="d-flex gap-2">
+                <button class="btn btn-outline-accent" type="button" data-bs-toggle="modal" data-bs-target="#productModal">
+                  Détails
+                </button>
+                <button class="btn btn-accent" type="button">Ajouter</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Produit 2 -->
+      <div class="col-12 col-sm-6 col-lg-4">
+        <div class="card glass product-card rounded-4 h-100">
+          <div class="card-body">
+            <img class="thumb w-100 mb-3" src="images/set-de-keycaps-pbt-retro.jpg" alt="Set de keycaps PBT retro">
+            <div class="d-flex justify-content-between align-items-start gap-2">
+              <div>
+                <h5 class="card-title mb-1">Set de keycaps PBT rétro</h5>
+                <p class="small muted mb-2">Claviers & touches</p>
+              </div>
+              <span class="badge text-bg-dark border" style="border-color: rgba(255,255,255,.12)!important;">En stock</span>
+            </div>
+            <p class="card-text small muted">
+              Look rétro + durable. Upgrade visuel instant.
+            </p>
+
+            <div class="d-flex justify-content-between align-items-center mt-3">
+              <div class="price fw-semibold fs-5">39,99 $</div>
+              <div class="d-flex gap-2">
+                <button class="btn btn-outline-accent" type="button" data-bs-toggle="modal" data-bs-target="#productModal">
+                  Détails
+                </button>
+                <button class="btn btn-accent" type="button">Ajouter</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Produit 3 -->
+      <div class="col-12 col-sm-6 col-lg-4">
+        <div class="card glass product-card rounded-4 h-100">
+          <div class="card-body">
+            <img class="thumb w-100 mb-3" src="images/souris-ergonomique-verticale.jpg" alt="Souris ergonomique verticale">
+            <div class="d-flex justify-content-between align-items-start gap-2">
+              <div>
+                <h5 class="card-title mb-1">Souris ergonomique verticale</h5>
+                <p class="small muted mb-2">Souris & pointeurs</p>
+              </div>
+              <span class="badge text-bg-dark border" style="border-color: rgba(255,255,255,.12)!important;">En stock</span>
+            </div>
+            <p class="card-text small muted">
+              Moins de tension au poignet, plus de focus sur le code.
+            </p>
+
+            <div class="d-flex justify-content-between align-items-center mt-3">
+              <div class="price fw-semibold fs-5">29,99 $</div>
+              <div class="d-flex gap-2">
+                <button class="btn btn-outline-accent" type="button" data-bs-toggle="modal" data-bs-target="#productModal">
+                  Détails
+                </button>
+                <button class="btn btn-accent" type="button">Ajouter</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <!-- Catégories -->
+  <section id="categories" class="container pb-5">
+    <div class="glass rounded-4 p-4">
+      <h2 class="h4 fw-semibold mb-3">Catégories populaires</h2>
+      <div class="d-flex flex-wrap gap-2">
+        <a class="btn btn-outline-accent" href="#">Claviers</a>
+        <a class="btn btn-outline-accent" href="#">Ergonomie</a>
+        <a class="btn btn-outline-accent" href="#">Hubs</a>
+        <a class="btn btn-outline-accent" href="#">Câbles</a>
+        <a class="btn btn-outline-accent" href="#">Éclairage</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Promotions -->
+  <section id="promo" class="container pb-5">
+    <div class="glass rounded-4 p-lg-5 p-4">
+        <div class="row align-items-center g-4">
+            <div class="col-lg-7">
+                <h2 class="h3 fw-bold mb-2">Pack "Survie sans IA"</h2>
+                <p class="muted mb-4">
+                    Un bundle pour faire face à une panne IA.
+                </p>
+                <div class="d-flex flex-wrap gap-2">
+                    <span class="pill small rounded-pill px-3 py-2">Support laptop</span>
+                    <span class="pill small rounded-pill px-3 py-2">Hub USB-C</span>
+                    <span class="pill small rounded-pill px-3 py-2">Gestion câbles</span>
+                </div>
+            </div>
+            <div class="col-lg-5 text-lg-end">
+                <a class="btn btn-accent btn-lg" href="panier.html">Voir mon panier</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="modal fade" id="productModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content glass">
+            <div class="modal-header border-0">
+                <h5 class="modal-title">Détails du produit</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                    aria-label="Fermer"></button>
+            </div>
+            <div class="modal-body">
+                <div class="d-flex gap-3">
+                    <img class="thumb" src="images/clavier-mecanique-60-pour-dev.jpg" alt="Produit"
+                        style="width: 220px;">
+                    <div>
+                        <h6 class="fw-semibold mb-1">Nom du produit</h6>
+                        <p class="muted small mb-3">
+                            Petite description du produit
+                        </p>
+                        <div class="price fw-semibold fs-4 mb-3">89,99 $</div>
+                        <button class="btn btn-accent">Ajouter au panier</button>
+                        <button class="btn btn-outline-accent ms-2" data-bs-dismiss="modal">Continuer</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="container pb-5">
+    <div class="glass rounded-4 p-4 d-flex flex-column flex-lg-row justify-content-between gap-2">
+      <div class="small muted">© DevGear / Eric Gagné (CSTJ) - Tous droits réservés</div>
+      <div class="small muted">
+        Pages : <a href="#">Catalogue</a> · <a href="#">Panier</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/navbar.js"></script>
+</body>
+</html>
