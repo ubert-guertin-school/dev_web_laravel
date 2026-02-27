@@ -18,9 +18,9 @@
         <div class="d-flex justify-content-between align-items-center mt-3">
         <div class="price fw-semibold fs-5">{{ $produit->prix }} $</div>
         <div class="d-flex gap-2">
-            <button class="btn btn-outline-accent" type="button" data-bs-toggle="modal" data-bs-target="#productModal">
+            <a class="btn btn-outline-accent" href="{{ route('produits.show', $produit->id) }}" data-bs-toggle="modal" data-bs-target="#productModal">
                 Détails
-            </button>
+            </a>
             <button class="btn btn-accent" type="button">Ajouter</button>
         </div>
         </div>

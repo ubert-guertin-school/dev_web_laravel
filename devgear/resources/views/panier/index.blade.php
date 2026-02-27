@@ -2,7 +2,7 @@
     css="css/panier.css"
 >
 
-    <x-nav />
+    <x-panier.nav />
 
     <main class="py-lg-5 container py-4">
         <div class="d-flex flex-column flex-lg-row justify-content-between align-items-lg-end mb-4 gap-3">
