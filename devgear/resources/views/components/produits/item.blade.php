@@ -21,7 +21,13 @@
             <a class="btn btn-outline-accent" href="{{ route('produits.show', $produit->id) }}" data-bs-toggle="modal" data-bs-target="#productModal">
                 Détails
             </a>
-            <button class="btn btn-accent" type="button">Ajouter</button>
+
+            <form action="{{ route('panier.ajouter') }}" method="POST">
+                @csrf
+                <input type="hidden" name="id" value="{{ $produit->id }}">
+                <input class="btn btn-accent" type="submit" value="Ajouter" name="submit" />
+            </form>
+
         </div>
         </div>
     </div>

@@ -19,7 +19,7 @@
                         Panier
                         <span
                             class="position-absolute start-100 translate-middle badge rounded-pill text-bg-light top-0">
-                            2
+                            {{ count(session("panier")) }}
                         </span>
                     </a>
                 </li>
