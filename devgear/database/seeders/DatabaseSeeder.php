@@ -16,15 +16,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // 1. Lire un fichier SQL et l'exécuter
+        // 1. Lire un fichier SQL et l'éxécuter
         DB::unprepared(file_get_contents(
             base_path('script.sql')
         ));
-
-        // 2. Lire un fichier CSV, Json, XML, etc.
-        // 3. Écrire manuellement les données à l'aide des modèles
-        // 4. Générer aléatoirement des données semi-réalistes
-
-
+        // 4. Générer aléatoirement des données semi réalistes
     }
 }

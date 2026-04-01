@@ -9,13 +9,13 @@ INSERT INTO categories (nom) VALUES
 ('Éclairage & ambiance');
 
 INSERT INTO produits (categorie_id, nom, description, prix, quantite, image_path, disponible, created_at, updated_at) VALUES
-(1, 'Clavier mécanique 60 pour dev', 'Clavier compact 60% idéal pour coder et gagner de la place. Touches reprogrammables.', 89.99, 18, 'images/clavier-mecanique-60-pour-dev.jpg', 1, NOW(), NOW()),
+(1, 'Clavier mécanique 60 pour dev', 'Clavier compact 60% idéal pour coder et gagner de la place. Touches reprogrammables.', 89.99, 0, 'images/clavier-mecanique-60-pour-dev.jpg', 1, NOW(), NOW()),
 (1, 'Set de keycaps PBT rétro', 'Keycaps PBT style rétro, résistantes et agréables au toucher. Format standard.', 39.99, 25, 'images/set-de-keycaps-pbt-retro.jpg', 1, NOW(), NOW()),
 (1, 'Outil extracteur de keycaps', 'Petit outil metal pour retirer les keycaps sans abimer le clavier. Indispensable.', 6.99, 60, 'images/outil-extracteur-de-keycaps.jpg', 1, NOW(), NOW()),
 (1, 'Repose-poignets mousse pour clavier', 'Repose-poignets confortable pour longues sessions de frappe. Format medium.', 14.99, 30, 'images/repose-poignets-mousse-pour-clavier.jpg', 1, NOW(), NOW()),
 (1, 'Kit switches silencieux x20', 'Switches silencieux pour bureau ou classe. Sensation linéaire, bruit réduit.', 19.99, 40, 'images/kit-switches-silencieux-x20.jpg', 1, NOW(), NOW()),
 
-(2, 'Souris ergonomique verticale', 'Souris verticale pour diminuer la tension au poignet. Connexion USB.', 29.99, 22, 'images/souris-ergonomique-verticale.jpg', 1, NOW(), NOW()),
+(2, 'Souris ergonomique verticale', 'Souris verticale pour diminuer la tension au poignet. Connexion USB.', 29.99, 0, 'images/souris-ergonomique-verticale.jpg', 1, NOW(), NOW()),
 (2, 'Tapis de souris XXL bureau', 'Tapis XXL couvrant clavier et souris. Surface notée pour glisse uniforme.', 24.99, 35, 'images/tapis-de-souris-xxl-bureau.jpg', 1, NOW(), NOW()),
 (2, 'Mouse bungee gestion de câble', 'Support de câble pour souris filaire. Reduit les accrocs sur le bureau.', 12.99, 15, 'images/mouse-bungee-gestion-de-cable.jpg', 1, NOW(), NOW()),
 (2, 'Trackball compact pour dev', 'Trackball compact pour gagner de la précision et limiter les mouvements.', 49.99, 10, 'images/trackball-compact-pour-dev.jpg', 1, NOW(), NOW()),

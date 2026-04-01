@@ -1,15 +1,16 @@
-document.querySelectorAll('.card .btn-details')
-    .forEach(element => {
-        element.addEventListener('click', e => {
-            e.preventDefault();
-
-            const modale = document.querySelector('#productModal .modal-content');
-            modale.innerHTML = "En chargement...";
-
-            const href = e.currentTarget.href; // Nous donne l'URL à contacter
-            axios.get(href)
-                .then(reponse => { modale.innerHTML = reponse.data })
-                .catch(error => { console.error(error) });
-
-        });
+document.querySelectorAll(".card .btn-details").forEach((button) => {
+    button.addEventListener("click", (event) => {
+        event.preventDefault();
+        let modale = document.querySelector("#productModal .modal-content");
+        modale.innerHTML = "En chargement...";
+        const href = event.currentTarget.href;
+        axios
+            .get(href)
+            .then((response) => {
+                modale.innerHTML = response.data;
+            })
+            .catch((error) => {
+                modale.innerHTML = "Erreur de chargement";
+            });
     });
+});

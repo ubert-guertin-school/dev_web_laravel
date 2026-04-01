@@ -11,7 +11,6 @@ return new class extends Migration
      */
     public function up(): void
     {
-        
         Schema::create('produits', function (Blueprint $table) {
             $table->id();
             $table->string('nom');
@@ -19,9 +18,8 @@ return new class extends Migration
             $table->decimal('prix')->default(0.0);
             $table->integer('quantite')->default(0);
             $table->string('image_path')->nullable();
-            $table->boolean('disponible')->default(true);
+            $table->boolean('disponible')->default(false);
             $table->foreignId('categorie_id')->constrained();
-
             $table->timestamps();
         });
     }

@@ -1,5 +1,4 @@
-@props(["visible" => true])
-
+@props(['visible' => true])
 @if ($visible)
     <header class="container py-4 py-lg-5">
         <div class="glass rounded-4 p-4 p-lg-5">
@@ -12,7 +11,6 @@
                     <h1 class="display-5 fw-bold mb-3">
                         Un setup pour des devs, <span style="color: var(--accent);">par des devs</span>.
                     </h1>
-
                     <p class="lead muted mb-4">
                         Claviers, ergonomie, hubs, câbles et petits trucs qui rendent le quotidien plus tolérables.
                         Tout ce qu'il te faut pour mettre en pratique tes compétences.
@@ -29,18 +27,20 @@
                         <span class="pill small px-3 py-2 rounded-pill">🔍 Recherche efficace</span>
                     </div>
                 </div>
-
                 <div class="col-lg-5">
                     <div class="glass rounded-4 p-3">
                         <div class="row g-3">
                             <div class="col-6">
-                                <img class="thumb w-100" src="{{ asset('images/clavier-mecanique-60-pour-dev.jpg') }}" alt="Clavier mécanique 60">
+                                <img class="thumb w-100" src="{{ asset('images/clavier-mecanique-60-pour-dev.jpg') }}"
+                                    alt="Clavier mécanique 60">
                             </div>
                             <div class="col-6">
-                                <img class="thumb w-100" src="{{ asset('images/souris-ergonomique-verticale.jpg') }}" alt="Souris verticale">
+                                <img class="thumb w-100" src="{{ asset('images/souris-ergonomique-verticale.jpg') }}"
+                                    alt="Souris verticale">
                             </div>
                             <div class="col-12">
-                                <img class="thumb w-100" src="{{ asset('images/hub-usb-c-6-en-1.jpg') }}" alt="Hub USB-C" style="aspect-ratio: 16/9;">
+                                <img class="thumb w-100" src="{{ asset('images/hub-usb-c-6-en-1.jpg') }}"
+                                    alt="Hub USB-C" style="aspect-ratio: 16/9;">
                             </div>
                         </div>
                     </div>
