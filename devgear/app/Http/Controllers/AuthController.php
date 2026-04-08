@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\LoginRequest;
+use App\Http\Requests\RegisterRequest;
 use App\Models\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -24,14 +26,10 @@ class AuthController extends Controller
      * @param Request $request
      * @return Redirect
      */
-    public function register(Request $request) {
+    public function register(RegisterRequest $request) {
         // Valider
-        $donnes = $request->validate([
-            "name" => "required|string|max:255",
-            "email" => "required|email|unique:clients",
-            "password" => "required|min:8|confirmed"
-        ]);
-
+        $donnes = $request->validated();
+        
         // Créer le client et le persister (ajouter à la BDD)
         $client = new Client();
         $client->nom = $donnes["name"];
@@ -55,11 +53,8 @@ class AuthController extends Controller
         return view('auth.login');
     }
 
-    public function login(Request $request) {
-        $donnees = $request->validate([
-            "email" => "required|email|max:255",
-            "password" => "required"
-        ]);
+    public function login(LoginRequest $request) {
+        $donnees = $request->validated();
 
         // Essayer de connecter le client
         if (Auth::guard('client')->attempt($donnees)) {
@@ -69,5 +64,15 @@ class AuthController extends Controller
 
         // Retourner le formulaire
         return back()->withErrors(["email" => "le courriel ou le mot de passe est invalide."]);
+    }
+
+    public function logout(Request $request) {
+        Auth::guard('client')->logout();
+
+        // On ne veut pas reconnecter l'utilisateur avec le même ID
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect()->route("accueil")->with("succes", "Vous êtes déconnecté avec succès!");
     }
 }

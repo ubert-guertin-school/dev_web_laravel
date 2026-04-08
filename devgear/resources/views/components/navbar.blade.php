@@ -14,7 +14,29 @@
                 <li class="nav-item"><a class="nav-link text-muted" href="#categories">Catégories</a></li>
                 <li class="nav-item"><a class="nav-link text-muted" href="#promo">Promotions</a></li>
                 
-                @guest
+                @auth('client')
+                    <li class="nav-item ms-lg-2">
+                        {{ Auth::guard('client')->user()->nom }}
+                    </li>
+
+                    <li class="nav-item">
+                        <form action="{{ route('logout') }}" method="POST">
+                            @csrf
+
+                            <button type="submit" class="btn btn-outline-warning btn-sm">
+                                Déconnexion
+                            </button>
+                        </form>
+                    </li>
+                @endauth
+
+                @guest('client')
+                    <li class="nav-item ms-lg-1">
+                        <a class="btn btn-outline-accent position-relative" href="{{ route('loginForm') }}">
+                            Connexion
+                        </a>    
+                    </li>
+
                     <li class="nav-item ms-lg-1">
                         <a class="btn btn-outline-accent position-relative" href="{{ route('registerForm') }}">
                             Inscription

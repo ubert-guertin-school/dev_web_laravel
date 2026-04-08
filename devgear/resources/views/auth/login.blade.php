@@ -7,6 +7,13 @@
       </a>
       <h2 class="mb-4 text-center fw-semibold">Connexion</h2>
 
+      @if (session("email"))
+         <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>Error</strong> {{ session('email' )}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+      @endif
+
       <form method="POST" action="{{ route('login') }}">
         @csrf
 
