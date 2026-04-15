@@ -6,12 +6,10 @@ use App\Models\Constantes;
 use App\Models\Produit;
 use Illuminate\Http\Request;
 
-class PanierController extends Controller
+class CommandeController extends Controller
 {
-    public function index() {
-
+    public function checkout() {
         $panier = session()->get('panier', []);
-
         $ids = array_keys($panier);
 
         $produits = [];
@@ -38,28 +36,19 @@ class PanierController extends Controller
 
         session()->put('total', $montants['total']);
 
-        return view('panier.index', [
+        // Vérifier si le panier est vide
+        if (!$items) {
+            return redirect()->route('panier')->with('erreur', "Votre panier est vide.");
+        }
+
+        return view('commandes.index', [
             'items' => $items,
             'sousTotal' => $sousTotal,
             'totalTPS' => $montants['tps'],
             'totalTVQ' => $montants['tvq'],
             'total' => $montants['total'],
+            "stripeKey" => config('services.stripe.key'),
         ]);
-    }
-
-    public function ajouter(Request $request) {
-        $id = $request->id;
-
-        Produit::findOrFail($id);
-        $panier = session()->get('panier', []);
-        if (isset($panier[$id]) == true ) {
-            $panier[$id]++;
-        } else {
-            $panier[$id] = 1;
-        }
-        session()->put('panier', $panier);
-
-        return redirect()->route('panier');
     }
 
     private function calculerMontants($sousTotal) {
