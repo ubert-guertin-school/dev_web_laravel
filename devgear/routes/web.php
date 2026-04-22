@@ -5,7 +5,6 @@ use App\Http\Controllers\CommandeController;
 use App\Http\Controllers\PanierController;
 use App\Http\Controllers\ProduitController;
 use Illuminate\Support\Facades\Route;
-use Symfony\Component\Console\Command\Command;
 
 Route::get('/', [ProduitController::class, 'index'])
     ->name('accueil');
@@ -41,18 +40,14 @@ Route::post("/logout", [AuthController::class, "logout"])
     ->middleware('auth:client')
     ->name("logout");
 
-// Commandes Stripe
+
 Route::middleware('auth:client')->group(function() {
-    Route::get("/checkout", [CommandeController::class, "checkout"])
-        ->name("commande.checkout");
-    
-    Route::post("/checkout", [CommandeController::class, "payer"])
-        ->name("commande.payer");
-    
-    Route::get("/commande/confirmation", [CommandeController::class, 'confirmer'])
-        ->name('commande.confirmation');
-    
-    Route::get("/commande/annulation", [CommandeController::class, 'annuler'])
-        ->name('commande.annulation');
-    
+    Route::get('/checkout', [CommandeController::class, 'checkout'])->name('commande.checkout');
+
+    Route::post('/checkout', [CommandeController::class, 'payer'])->name('commande.payer');
+
+    Route::get('/commande/confirmation', [CommandeController::class, 'confirmer'])->name('commande.confirmation');
+    Route::get('/commande/annulation', [CommandeController::class, 'annulation'])->name('commande.annulation');
+
+    Route::get('/commandes', [CommandeController::class, 'historique'])->name('commande.historique');
 });

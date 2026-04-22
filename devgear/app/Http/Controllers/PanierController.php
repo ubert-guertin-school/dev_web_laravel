@@ -4,46 +4,21 @@ namespace App\Http\Controllers;
 
 use App\Models\Constantes;
 use App\Models\Produit;
+use App\Services\PanierService;
 use Illuminate\Http\Request;
 
 class PanierController extends Controller
 {
     public function index() {
 
-        $panier = session()->get('panier', []);
-
-        $ids = array_keys($panier);
-
-        $produits = [];
-        if(!empty($ids)) {
-            $produits = Produit::whereIn('id', $ids)->get();
-        }
-
-        $items = [];
-        $sousTotal = 0.00;
-
-        foreach($produits as $produit) {
-            $quantite = $panier[$produit->id] ?? 0;
-            $totalProduit = $quantite * $produit->prix;
-            $sousTotal += $totalProduit;
-
-            $items[] = [
-                'produit' => $produit,
-                "quantite" => $quantite,
-                'totalProduit' => $totalProduit
-            ];
-        }
-
-        $montants = $this->calculerMontants($sousTotal);
-
-        session()->put('total', $montants['total']);
+       $panier = (new PanierService)->calculer();
 
         return view('panier.index', [
-            'items' => $items,
-            'sousTotal' => $sousTotal,
-            'totalTPS' => $montants['tps'],
-            'totalTVQ' => $montants['tvq'],
-            'total' => $montants['total'],
+            'items' => $panier['items'],
+            'sousTotal' => $panier['sousTotal'],
+            'totalTPS' => $panier['totalTPS'],
+            'totalTVQ' => $panier['totalTVQ'],
+            'total' => $panier['total'],
         ]);
     }
 
@@ -72,5 +47,5 @@ class PanierController extends Controller
             'tvq' => number_format($totalTVQ, 2, ','),
             'total' => number_format($total, 2, ','),
         ];
-    }
+        }
 }

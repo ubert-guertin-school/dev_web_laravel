@@ -105,7 +105,8 @@
                     </div>
 
                     <div class="d-grid mt-4 gap-2">
-                        <a class="btn btn-accent btn-lg" href="{{ route('commande.checkout') }}">Passer à la caisse</a>
+                        <a class="btn btn-accent btn-lg" href="{{ route('commande.checkout') }}">Passer à la
+                            caisse</a>
                         <button class="btn btn-outline-accent">Mettre à jour le panier</button>
                     </div>
                 </div>

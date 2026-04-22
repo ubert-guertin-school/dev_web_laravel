@@ -25,7 +25,6 @@
     <script src="{{ asset('js/navbar.js') }}"></script>
 
     @stack('scripts')
-
 </body>
 
 </html>

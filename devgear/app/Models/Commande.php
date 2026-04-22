@@ -16,5 +16,8 @@ class Commande extends Model
     public function client() {
         return $this->belongsTo(Client::class);
     }
-//
+
+    public function achats() {
+        return $this->hasMany(Achat::class);
+    }
 }
